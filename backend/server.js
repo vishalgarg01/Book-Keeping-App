@@ -2,6 +2,7 @@ const express=require('express');
 const dotenv=require('dotenv'); //protect our keys to being public
 const dbConnect=require('./config/dbConnect');
 const usersRoute=require('./routes/userRoute');
+const booksRoute=require('./routes/bookRoutes');
 const error=require('./middlewares/errorMiddlewareHandler');
 
 dotenv.config();
@@ -12,6 +13,7 @@ const app=express();
 app.use(express.json());
 
 app.use('/api/users',usersRoute);
+app.use('/api/books',booksRoute)
 
 app.use(error.errorMiddlewareHandler)
 

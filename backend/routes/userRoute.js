@@ -1,5 +1,6 @@
 const express=require('express');
 const asyncHandler=require('express-async-handler');
+const authMiddleware = require('../middlewares/authMiddleware');
 const usersRoute=express.Router();
 const User=require('../models/User');
 const generateToken=require('../utils/generateToken');
@@ -46,5 +47,9 @@ usersRoute.post('/login',asyncHandler(async(req,res)=>{
     }
 })
 );
+
+usersRoute.get('/',authMiddleware,(req,res)=>{
+    res.send(req.user)
+})
 
 module.exports=usersRoute;
