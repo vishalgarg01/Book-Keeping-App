@@ -12,6 +12,7 @@
   "author": "Vishal Garg",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "concurrently": "^6.0.2",
     "dotenv": "^8.2.0",

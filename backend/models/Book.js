@@ -15,7 +15,7 @@ const bookSchema=new mongoose.Schema({
     createdBy:{ //which user stores this book
         type:mongoose.Schema.Types.ObjectId,
         ref:'User',
-        required:true, 
+     //   required:true, 
     },
 }, {
     timestamps:true,
